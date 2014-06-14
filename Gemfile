@@ -13,6 +13,7 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'jbuilder', '~> 2.0'
 
 gem 'devise'
+gem 'paperclip'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
