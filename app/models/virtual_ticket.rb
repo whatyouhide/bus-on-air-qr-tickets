@@ -17,7 +17,12 @@ class VirtualTicket < ActiveRecord::Base
 
   # A ticket is expired if `VALID_FOR` time is passed since its creation.
   def expired?
-    Time.now > created_at + VALID_FOR
+    Time.now > valid_until
+  end
+
+  # The time when this ticket will expire.
+  def valid_until
+    created_at + VALID_FOR
   end
 
   private

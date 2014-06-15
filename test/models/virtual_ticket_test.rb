@@ -9,6 +9,11 @@ class VirtualTicketTest < ActiveSupport::TestCase
     assert t.expired?
   end
 
+  test 'valid_until' do
+    t = VirtualTicket.create
+    assert_equal t.valid_until, t.created_at + VirtualTicket::VALID_FOR
+  end
+
   test 'creation callbacks' do
     ticket = VirtualTicket.create
     assert_not_nil ticket.code
