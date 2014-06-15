@@ -5,5 +5,7 @@ class CreateVirtualTickets < ActiveRecord::Migration
       t.references :user
       t.timestamps
     end
+
+    add_index :virtual_tickets, :code, unique: true
   end
 end

@@ -42,4 +42,6 @@ ActiveRecord::Schema.define(version: 20140614144917) do
     t.datetime "qr_code_updated_at"
   end
 
+  add_index "virtual_tickets", ["code"], name: "index_virtual_tickets_on_code", unique: true
+
 end
