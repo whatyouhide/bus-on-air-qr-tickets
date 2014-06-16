@@ -1,0 +1,8 @@
+inherit_from: /Users/whatyouhide/.rubocop.yml
+
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - db/migrate/*devise*
+    - config/initializers/devise.rb
+    - bin/*

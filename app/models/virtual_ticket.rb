@@ -1,6 +1,8 @@
 require 'securerandom'
 require 'qr_code_fetcher'
 
+# A virtual ticket: a ticket which has a unique code and an associated QR code
+# (an image).
 class VirtualTicket < ActiveRecord::Base
   VALID_FOR = 90.minutes
 

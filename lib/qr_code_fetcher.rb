@@ -2,6 +2,7 @@ require 'active_support'
 require 'uri'
 require 'open-uri'
 
+# Fetch QR codes over the internet.
 module QrCodeFetcher
   BASE = 'http://api.qrserver.com/v1/create-qr-code/'
 
@@ -19,6 +20,6 @@ module QrCodeFetcher
   def self.qr_code(code)
     open(fetch_url(code: code))
   rescue OpenURI::HTTPError => e
-    raise QrCodeUnavailable.new(e.message)
+    raise QrCodeUnavailable, e.message
   end
 end
