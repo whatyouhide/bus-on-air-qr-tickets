@@ -11,5 +11,9 @@ Rails.application.routes.draw do
     get 'virtual_tickets/:id',
       to: 'virtual_tickets#show',
       as: 'virtual_ticket'
+
+    get 'verify/:code',
+      to: 'virtual_tickets#verify',
+      as: 'verify_ticket'
   end
 end

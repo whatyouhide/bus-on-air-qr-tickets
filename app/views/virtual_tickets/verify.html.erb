@@ -1,0 +1,7 @@
+<% if @ticket.nil? %>
+  Biglietto non trovato.
+<% elsif @ticket.expired? %>
+  Ticket scaduto!
+<% else %>
+  Ticket valido.
+<% end %>
