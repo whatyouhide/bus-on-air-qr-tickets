@@ -14,7 +14,7 @@ class VirtualTicketsController < ApplicationController
     @ticket = VirtualTicket.find(params[:id])
   end
 
-  # GET /verify/13jg1vljkblruhvpq98ghrpqeioghqpe9
+  # GET /verify?code=14frwg5q4t1...
   def verify
     @ticket = VirtualTicket.find_by_code(params[:code])
   end

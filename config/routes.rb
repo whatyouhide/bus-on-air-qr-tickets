@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       to: 'virtual_tickets#show',
       as: 'virtual_ticket'
 
-    get 'verify/:code',
+    get 'verify',
       to: 'virtual_tickets#verify',
       as: 'verify_ticket'
   end

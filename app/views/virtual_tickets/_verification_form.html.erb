@@ -1,1 +1,4 @@
-<%= text_field_tag 'code' %>
+<%= form_tag verify_ticket_path, method: :get do %>
+  <%= text_field_tag 'code' %>
+  <%= submit_tag 'Verifica' %>
+<% end %>

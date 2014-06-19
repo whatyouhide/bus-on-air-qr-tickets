@@ -3,5 +3,5 @@
 <% elsif @ticket.expired? %>
   Ticket scaduto!
 <% else %>
-  Ticket valido.
+  Ticket valido fino alle: <%= @ticket.valid_until %>
 <% end %>
