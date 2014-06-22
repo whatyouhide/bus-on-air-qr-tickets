@@ -19,7 +19,7 @@ module QrCodeFetcher
 
   def self.qr_code(code)
     open(fetch_url(code: code))
-  rescue OpenURI::HTTPError => e
-    raise QrCodeUnavailable, e.message
+  rescue OpenURI::HTTPError => exception
+    raise QrCodeUnavailable, exception.message
   end
 end

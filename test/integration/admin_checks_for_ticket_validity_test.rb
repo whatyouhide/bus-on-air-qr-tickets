@@ -6,6 +6,12 @@ class AdminChecksForTicketValidityTest < ActionDispatch::IntegrationTest
   include Warden::Test::Helpers
   Warden.test_mode!
 
+  def fill_with_code(code)
+    visit '/'
+    fill_in 'code', with: code
+    click_button 'Verifica'
+  end
+
   setup do
     @admin = User.create!(email: 'a@b.com', password: '12345678', admin: true)
     @valid_ticket = VirtualTicket.create!
@@ -15,23 +21,17 @@ class AdminChecksForTicketValidityTest < ActionDispatch::IntegrationTest
   end
 
   test "admin enters a code which matches a valid ticket" do
-    visit '/'
-    fill_in 'code', with: @valid_ticket.code
-    click_button 'Verifica'
+    fill_with_code(@valid_ticket.code)
     assert page.has_content?('Ticket valido')
   end
 
   test "admin enters a code which matches an expired ticket" do
-    visit '/'
-    fill_in 'code', with: @expired_ticket.code
-    click_button 'Verifica'
+    fill_with_code(@expired_ticket.code)
     assert page.has_content?('scaduto')
   end
 
   test "admin enters a code which matches no tickets" do
-    visit '/'
-    fill_in 'code', with: 'foo'
-    click_button 'Verifica'
+    fill_with_code('foo')
     assert page.has_content?('non trovato')
   end
 end
