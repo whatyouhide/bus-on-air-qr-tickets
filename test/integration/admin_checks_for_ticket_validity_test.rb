@@ -22,7 +22,7 @@ class AdminChecksForTicketValidityTest < ActionDispatch::IntegrationTest
 
   test "admin enters a code which matches a valid ticket" do
     fill_with_code(@valid_ticket.code)
-    assert page.has_content?('Ticket valido')
+    assert page.has_content?('valido')
   end
 
   test "admin enters a code which matches an expired ticket" do
