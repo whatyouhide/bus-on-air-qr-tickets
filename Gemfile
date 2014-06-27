@@ -9,6 +9,7 @@ gem 'turbolinks'
 gem 'jquery-rails'
 
 gem 'sass-rails', '~> 4.0.3'
+gem 'flat-ui-rails'
 
 gem 'jbuilder', '~> 2.0'
 
