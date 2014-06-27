@@ -4,6 +4,6 @@ require 'qr_code_fetcher'
 class QrCodeFetcherTest < ActiveSupport::TestCase
   test '::fetch_url' do
     assert_equal QrCodeFetcher.fetch_url(code: 'foo'),
-      QrCodeFetcher::BASE + '?data=foo'
+      QrCodeFetcher::BASE + '?data=foo&size=500x500'
   end
 end

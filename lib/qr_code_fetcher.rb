@@ -11,7 +11,8 @@ module QrCodeFetcher
   # Build the url where to GET the qr code.
   def self.fetch_url(data)
     data_with_better_keys = {
-      data: data[:code]
+      data: data[:code],
+      size: '500x500'
     }
 
     URI.join(BASE, "?#{data_with_better_keys.to_param}").to_s
