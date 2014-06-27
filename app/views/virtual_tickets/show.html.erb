@@ -1,5 +1,5 @@
-Ecco il tuo ticket:
-
-<%= image_tag @ticket.qr_code.url %>
-
-<%= link_to 'Torna ai miei tickets', root_path %>
+<div class="show">
+  <h1>Ecco il tuo ticket:</h1>
+  <%= image_tag @ticket.qr_code.url %>
+  <%= link_to 'Torna ai miei tickets', root_path, class: 'back-to-tickets btn btn-warning' %>
+</div>

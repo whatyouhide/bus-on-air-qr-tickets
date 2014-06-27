@@ -1,7 +1,9 @@
-<% if @ticket.nil? %>
-  Biglietto non trovato.
-<% elsif @ticket.expired? %>
-  Ticket scaduto!
-<% else %>
-  Ticket valido fino alle: <%= @ticket.valid_until %>
-<% end %>
+<div class="verification-result">
+  <% if @ticket.nil? %>
+    Biglietto non trovato.
+  <% elsif @ticket.expired? %>
+    Ticket scaduto!
+  <% else %>
+    Ticket valido fino alle: <%= @ticket.valid_until %>
+  <% end %>
+</div>

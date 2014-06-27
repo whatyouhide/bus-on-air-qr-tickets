@@ -19,7 +19,7 @@ class UserManagesHerTicketsTestTest < ActionDispatch::IntegrationTest
   test 'for non expired tickets, their expiration time is displayed' do
     ticket = @user.virtual_tickets.create!
     visit '/'
-    assert page.has_content?(ticket.created_at)
+    assert page.has_content?(ticket.created_at.strftime('%H:%M'))
   end
 
   test 'requesting a new ticket generates a new ticket' do
