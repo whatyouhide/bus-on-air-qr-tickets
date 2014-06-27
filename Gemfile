@@ -20,3 +20,5 @@ gem 'paperclip'
 gem 'spring', group: :development
 gem 'capybara', group: :test
 gem 'rake', group: [:development, :test]
+gem 'guard', group: :development
+gem 'guard-livereload', group: :development
