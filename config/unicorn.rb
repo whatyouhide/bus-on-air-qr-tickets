@@ -1,4 +1,4 @@
-working_directory '/home/deploy/bus-on-air-qr-tickets_production'
+working_directory '/home/deploy/bus-on-air-qr-tickets_production/current'
 pid '/home/deploy/bus-on-air-qr-tickets_production/shared/tmp/pids/unicorn.pid'
 listen '/tmp/unicorn.qrtickets.sock'
 
