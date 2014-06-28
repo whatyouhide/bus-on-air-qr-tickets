@@ -22,3 +22,10 @@ gem 'capybara', group: :test
 gem 'rake', group: [:development, :test]
 gem 'guard', group: :development
 gem 'guard-livereload', group: :development
+
+gem 'capistrano-rails'
+gem 'capistrano-rvm'
+gem 'capistrano-bundler'
+gem 'capistrano3-unicorn'
+
+gem 'unicorn', group: :production
