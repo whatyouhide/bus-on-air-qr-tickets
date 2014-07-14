@@ -5,8 +5,11 @@ set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
 set :scm, :git
 set :repo_url, 'https://github.com/whatyouhide/bus-on-air-qr-tickets.git'
 
-# Default deploy_to directory is /var/www/my_app
-set :deploy_to, "/home/#{fetch :user}/#{fetch :full_app_name}"
+# Server user
+set :user, 'deploy'
+
+# Where to deploy on each server.
+set :deploy_to, "/home/#{fetch(:user)}/apps/#{fetch :full_app_name}"
 
 set :rvm_type, :user
 set :rvm_ruby_version, '2.1.2'
